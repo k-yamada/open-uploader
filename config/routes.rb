@@ -6,6 +6,7 @@ OpenUploader::Application.routes.draw do
   get "items/destroy"
   get "items/index"
   get "items/show"
+  get "items/:id/image" => 'items#image'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

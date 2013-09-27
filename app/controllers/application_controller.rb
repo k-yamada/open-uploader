@@ -6,4 +6,6 @@ class ApplicationController < ActionController::Base
   config.mongo_hosts  = "localhost:27017"
   config.mongo_dbname = "open-uploader"
 
+  $config = config
+
 end
