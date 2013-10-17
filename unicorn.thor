@@ -4,9 +4,6 @@ require 'thor'
 require 'shellutils'
 
 class Unicorn < Thor
-  ##
-  # UNICORN
-
   PORT = 8081
 
   desc "start", 'unicorn start'
