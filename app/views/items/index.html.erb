@@ -1,10 +1,24 @@
-<% @items.each do |item| %>
+<form action="/items/create"
+      class="dropzone"
+      id="my-awesome-dropzone"></form>
 
-<div>
-  <%= item["name"] %>
-  <%= item["original_filename"] %>
-  <%= item["_id"] %>
-  <img src="/items/<%= item["_id"] %>/image"/>
-</div>
-
-<% end %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>xx</th>
+      <th>xx</th>
+      <th>xx</th>
+      <th>xx</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @items.each do |item| %>
+    <tr>
+      <td><%= item["name"] %></td>
+      <td><%= item["original_filename"] %></td>
+      <td><%= item["_id"] %></td>
+      <td><img src="/items/<%= item["_id"] %>/image"/></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

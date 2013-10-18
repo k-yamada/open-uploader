@@ -21,6 +21,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
+#gem 'jquery-ui-rails'
+gem 'rails-backbone'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
@@ -49,3 +52,5 @@ gem 'mongo'
 # command line script
 gem 'thor'
 gem 'shellutils'
+
+gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
