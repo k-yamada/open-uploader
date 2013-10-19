@@ -4,8 +4,6 @@ require 'thor'
 require 'shellutils'
 
 class Unicorn < Thor
-  PORT = 8081
-
   desc "start", 'unicorn start'
   def start
     #ShellUtils.sh "bundle exec unicorn -c config/unicorn.rb -E #{Libs::ConfigUtils.get_rails_env} -D"
@@ -47,7 +45,7 @@ class Unicorn < Thor
 
   def send_signal_to_unicorn(pid, signal, failed_message='Not running.')
     if pid
-      ShellUtils.sudo "kill -#{signal.to_s} #{pid}"
+      ShellUtils.sh "kill -#{signal.to_s} #{pid}"
     else
       puts failed_message if failed_message.present?
     end

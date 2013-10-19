@@ -17,3 +17,4 @@
 
 /vendor/bundle
 /*.lock
+public/assets
