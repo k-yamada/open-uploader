@@ -12,6 +12,7 @@ class Build < Thor
     else
       ShellUtils.sh "./bin/build_linux.sh"
     end
+    ShellUtils.sh "rake assets:precompile"
   end
 
 end
