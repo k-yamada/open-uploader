@@ -13,6 +13,7 @@
 
 - write nginx.conf
 
+```
     # /usr/local/nginx/conf/nginx.conf
 
     user  nobody;
@@ -30,9 +31,11 @@
         default_type  application/octet-stream;
     ...
     }
+```
 
 - write open-uploader.conf
 
+```
     # /usr/local/nginx/conf/nginx.conf
 
     upstream open-uploader {
@@ -70,6 +73,7 @@
         root /var/www/open-uploader;
       }
     }
+```
 
 - restart nginx
 
