@@ -1,14 +1,35 @@
-<form action="/items/create"
-      class="dropzone"
-      id="my-awesome-dropzone"></form>
+<div id="upload_area" style="display:none">
+  <div class="page-header">
+    <h1>Upload</h1>
+  </div>
+
+  <%= form_tag({controller: "items", action: "create"}, multipart: true) do %>
+    <div class="form-group">
+      <label for="exampleInputFile">File</label>
+      <input type="file" name="file" id="exampleInputFile">
+      <!-- <p class="help-block">Example block-level help text here.</p>-->
+    </div>
+    <!--
+    <div class="checkbox">
+      <label>
+        <input type="checkbox"> Check me out
+      </label>
+    </div>
+    -->
+    <button type="submit" class="btn btn-default">Upload</button>
+  <% end %>
+</div>
+
+<div class="page-header">
+  <h1>List</h1>
+</div>
 
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>xx</th>
-      <th>xx</th>
-      <th>xx</th>
-      <th>xx</th>
+      <th>name</th>
+      <th>original_filename</th>
+      <th>file</th>
     </tr>
   </thead>
   <tbody>
@@ -16,9 +37,16 @@
     <tr>
       <td><%= item["name"] %></td>
       <td><%= item["original_filename"] %></td>
-      <td><%= item["_id"] %></td>
       <td><img src="/items/<%= item["_id"] %>/image"/></td>
     </tr>
   <% end %>
   </tbody>
 </table>
+
+<script type="text/javascript">
+  $(function() {
+    window.view = new OU.Views.AppView();
+    view.render();
+    //Backbone.history.start();
+  });
+</script>

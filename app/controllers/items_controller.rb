@@ -11,7 +11,8 @@ class ItemsController < ApplicationController
       :original_filename => params[:file].original_filename,
       :file_data => BSON::Binary.new(params[:file].read, BSON::Binary::SUBTYPE_BYTES)
     )
-    render :json => {:result => :success}
+    redirect_to :action => :index
+    # render :json => {:result => :success}
   end
 
   def update
