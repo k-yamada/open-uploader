@@ -1,3 +1,40 @@
+<div id="file_uploader" style="display:none">
+  <div id="drop-files" ondragover="return false">
+    Drop Images Here
+  </div>
+
+  <div id="uploaded-holder">
+    <div id="dropped-files">
+      <div id="upload-button">
+        <a href="#" class="upload">Upload!</a>
+        <a href="#" class="delete">delete</a>
+        <span>0 Files</span>
+      </div>
+    </div>
+    <div id="extra-files">
+      <div class="number">
+        0
+      </div>
+      <div id="file-list">
+        <ul></ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="loading">
+    <div id="loading-bar">
+      <div class="loading-color"> </div>
+    </div>
+    <div id="loading-content">Uploading file.jpg</div>
+  </div>
+
+  <div id="file-name-holder">
+    <ul id="uploaded-files">
+      <h1>Uploaded Files</h1>
+    </ul>
+  </div>
+</div>
+
 <div id="upload_area" style="display:none">
   <div class="page-header">
     <h1>Upload</h1>
@@ -37,16 +74,20 @@
     <tr>
       <td><%= item["name"] %></td>
       <td><%= item["original_filename"] %></td>
-      <td><img src="/items/<%= item["_id"] %>/image"/></td>
+      <td>
+        <a href="/items/<%= item["_id"] %>/image">
+          <img src="/items/<%= item["_id"] %>/image" style="max-width:200px; max-height:200px"/>
+        </a>
+      </td>
     </tr>
   <% end %>
   </tbody>
 </table>
+<%= paginate @items %>
 
 <script type="text/javascript">
   $(function() {
     window.view = new OU.Views.AppView();
     view.render();
-    //Backbone.history.start();
   });
 </script>

@@ -5,7 +5,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    Item.new.insert(
+    Item.create(
       :name              => params[:name],
       :content_type      => params[:file].content_type,
       :original_filename => params[:file].original_filename,
@@ -25,14 +25,14 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.new.find
+    @items = Item.page(params[:page]).per(25).order("id desc")
   end
 
   def show
   end
 
   def image
-    item = Item.new.find_by_id(params[:id])
+    item = Item.find_by_id(params[:id])
     send_data(item["file_data"].to_s, :filename => item["name"], :content_type => item["content_type"], :disposition => "inline")
   end
 

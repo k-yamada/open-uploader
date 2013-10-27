@@ -54,3 +54,11 @@ gem 'thor'
 gem 'shellutils'
 
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
+
+# paging
+gem 'kaminari'
+
+# A Mongo ORM for Ruby
+#gem 'mongo_mapper'
+gem 'mongo_mapper', :git => "git://github.com/mongomapper/mongomapper.git", :tag => "v0.13.0.beta2"
+gem 'bson_ext'
