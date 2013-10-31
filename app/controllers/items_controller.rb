@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
       :name              => params[:name],
       :content_type      => params[:file].content_type,
       :original_filename => params[:file].original_filename,
-      :file_data => BSON::Binary.new(params[:file].read, BSON::Binary::SUBTYPE_BYTES)
+      :file_data         => BSON::Binary.new(params[:file].read, BSON::Binary::SUBTYPE_BYTES)
     )
     redirect_to :action => :index
     # render :json => {:result => :success}
@@ -25,7 +25,7 @@ class ItemsController < ApplicationController
   end
 
   def index
-    @items = Item.page(params[:page]).per(25).order("id desc")
+    @items = Item.page(params[:page]).per(25).order("created_at desc")
   end
 
   def show

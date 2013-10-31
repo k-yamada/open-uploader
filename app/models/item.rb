@@ -8,6 +8,8 @@ class Item# < MongoModel
   key :content_type, String
   key :original_filename, String
   key :file_data, Binary
+  timestamps!
+
 
 #  def initialize
 #    super
